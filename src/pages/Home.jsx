@@ -7,10 +7,10 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-center justify-center text-center overflow-hidden">
+      <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-start md:items-center justify-center text-center overflow-hidden pt-20 md:pt-0">
         {/* Background Image */}
         <img
-          src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?q=80&w=1920&auto=format&fit=crop"
+          src="https://plus.unsplash.com/premium_photo-1703417465970-e1b71f697cc4?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y291bnRyeSUyMGNoaWNrZW58ZW58MHx8MHx8fDA%3D"
           alt="Farm background"
           className="absolute inset-0 w-full h-full object-cover animate-slow-zoom"
         />
@@ -19,7 +19,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60" />
 
         {/* Content */}
-        <div className="relative z-10 max-w-3xl px-6 space-y-8 text-white">
+        <div className="relative z-10 max-w-3xl px-6 space-y-8 text-white " >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight">
             Fresh Poultry
             <span className="block text-accent">Straight From Farm</span>
@@ -30,17 +30,17 @@ export default function Home() {
             directly to your doorstep with care.
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 pt-2">
+          <div className="flex flex-row md:flex-row justify-center gap-4 pt-2">
             <Link
               to="/products"
-              className="bg-primary text-white px-8 py-3 rounded-xl text-sm font-medium hover:opacity-90 active:scale-[0.98] transition"
+              className="bg-primary text-white py-3 px-5 md:px-8 md:py-3 rounded-xl text-sm font-medium hover:opacity-90 active:scale-[0.98] transition"
             >
               Shop Fresh
             </Link>
 
             <Link
               to="/about"
-              className="border border-white px-8 py-3 rounded-xl text-sm font-medium hover:bg-white hover:text-black active:scale-[0.98] transition"
+              className="border border-white py-3 px-5 md:px-8 md:py-3 rounded-xl text-sm font-medium hover:bg-white hover:text-black active:scale-[0.98] transition"
             >
               Learn More
             </Link>
