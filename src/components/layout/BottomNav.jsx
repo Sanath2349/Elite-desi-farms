@@ -1,23 +1,20 @@
 import { NavLink } from "react-router-dom";
 import { Home, ShoppingBag, ShoppingCart, User } from "lucide-react";
 import { useSelector } from "react-redux";
+import { selectIsAuthenticated } from "../../features/auth/authSlice";
 
 export default function BottomNav() {
-  const totalQuantity = useSelector(
-    (state) => state.cart.totalQuantity
-  );
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   const navItemClass = ({ isActive }) =>
     `flex flex-col items-center justify-center text-xs transition ${
-      isActive
-        ? "text-primary"
-        : "text-gray-500 hover:text-primary"
+      isActive ? "text-primary" : "text-gray-500 hover:text-primary"
     }`;
 
   return (
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
       <div className="flex justify-around items-center h-16">
-
         <NavLink to="/" className={navItemClass}>
           <Home size={20} />
           <span>Home</span>
@@ -39,12 +36,17 @@ export default function BottomNav() {
           </div>
           <span>Cart</span>
         </NavLink>
-
-        <NavLink to="/account" className={navItemClass}>
-          <User size={20} />
-          <span>Account</span>
-        </NavLink>
-
+        {isAuthenticated ? (
+          <NavLink to="/account" className={navItemClass}>
+            <User size={20} />
+            <span>Account</span>
+          </NavLink>
+        ) : (
+          <NavLink to="/login" className={navItemClass}>
+            <User size={20} />
+            <span>Login</span>
+          </NavLink>
+        )}
       </div>
     </nav>
   );

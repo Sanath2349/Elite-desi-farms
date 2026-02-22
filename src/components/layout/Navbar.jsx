@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { ShoppingCart } from "lucide-react";
+import { selectIsAuthenticated,selectIsAdmin } from "../../features/auth/authSlice";
 
 export default function Navbar() {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const isAuthenticated = useSelector(selectIsAuthenticated);
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/70 border-b border-gray-100">
@@ -37,9 +39,15 @@ export default function Navbar() {
               <Link to="/products" className="hover:text-primary transition">
                 Products
               </Link>
-              <Link to="/account" className="hover:text-primary transition">
-                Account
-              </Link>
+              {isAuthenticated ? (
+                <Link to="/account" className="hover:text-primary transition">
+                  Account
+                </Link>
+              ) : (
+                <Link to="/login" className="hover:text-primary transition">
+                  Login
+                </Link>
+              )}
             </nav>
 
             {/* Cart */}
