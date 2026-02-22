@@ -11,7 +11,7 @@ import AdminLayout from "./admin/AdminLayout";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import AdminRoute from "./routes/AdminRoute";
-import CreateProduct from "./admin/pages/Createproduct";
+import CreateProduct from "./admin/pages/CreateProduct";
 import AdminProducts from "./admin/pages/AdminProducts";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
