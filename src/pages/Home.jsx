@@ -22,7 +22,7 @@ export default function Home() {
         {/* Content */}
         <div className="relative z-10 max-w-3xl px-6 space-y-8 text-white ">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight tracking-tight">
-            Fresh Poultry
+            Elite Desi Farms
             <span className="block text-accent">Straight From Farm</span>
           </h1>
 
